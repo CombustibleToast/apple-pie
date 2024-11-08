@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8aapkb7fo0v1"]
+[gd_scene load_steps=9 format=3 uid="uid://b8aapkb7fo0v1"]
 
 [ext_resource type="PackedScene" uid="uid://doa0cyqk7nqv7" path="res://Player/Player.tscn" id="1_kkvsl"]
-[ext_resource type="PackedScene" uid="uid://dxwx16qs0u431" path="res://World/world-test.tscn" id="2_eflmq"]
+[ext_resource type="PackedScene" path="res://World/world-test.tscn" id="2_eflmq"]
+[ext_resource type="PackedScene" uid="uid://cjdjbe2oi2gam" path="res://Collectables/Collectable.tscn" id="3_0vhon"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_gw2f5"]
 
@@ -57,3 +58,6 @@ environment = SubResource("Environment_l4nkn")
 
 [node name="world-test" parent="." instance=ExtResource("2_eflmq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.5853, 0, 0)
+
+[node name="Area3D" parent="." instance=ExtResource("3_0vhon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74205, 0.52867, -0.252512)
