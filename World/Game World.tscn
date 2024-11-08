@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8aapkb7fo0v1"]
+
+[ext_resource type="PackedScene" uid="uid://doa0cyqk7nqv7" path="res://Player/Player.tscn" id="1_kkvsl"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_gw2f5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x8udt"]
+size = Vector3(1, 1, 0.0407562)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ptdp5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_djk7o"]
+
+[sub_resource type="Environment" id="Environment_l4nkn"]
+background_mode = 1
+background_color = Color(0.537941, 0.379969, 0.277438, 1)
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+fog_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_kkvsl")]
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.133, 4.55)
+
+[node name="Floor Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-08, 1, 0, -100, -4.37114e-06, 0, 0, 0)
+mesh = SubResource("QuadMesh_gw2f5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor Mesh"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor Mesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.44089e-16, -0.0194778)
+shape = SubResource("BoxShape3D_x8udt")
+
+[node name="Test Physical Object" type="RigidBody3D" parent="."]
+transform = Transform3D(0.924193, 0.339623, -0.174709, -0.375726, 0.890572, -0.256341, 0.0685315, 0.302551, 0.950666, -2.869, 1.386, 0)
+mass = 0.046
+gravity_scale = 0.385
+
+[node name="Test Physical Object" type="CollisionShape3D" parent="Test Physical Object"]
+shape = SubResource("BoxShape3D_ptdp5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test Physical Object/Test Physical Object"]
+mesh = SubResource("BoxMesh_djk7o")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.239561, 0.754075, -0.611541, -0.45855, 0.467322, 0.755872, 0.85577, 0.461499, 0.233828, -1.311, 0.288, -6.6)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l4nkn")
