@@ -14,7 +14,7 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input := Input.get_vector("left", "right", "forward", "backward")
+	var input := Input.get_vector("left", "right", "forward", "backward").rotated(-PI/4) # the rotation is to account for the isometric 45deg viewing angle
 	var direction := Vector3(input.x, 0, input.y).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
