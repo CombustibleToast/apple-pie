@@ -5,7 +5,7 @@ extends Node2D
 @onready var mixing_timer = $mixing_timer
 @onready var instructions_label = $Control/instructions_label
 @onready var game_timer = $game_timer
-@onready var game_timer_label = $game_timer/timer_label
+@onready var game_timer_label = $Control/timer_label
 
 # Constants
 const REQUIRED_DURATION = 10  # Time in seconds to maintain circular motion
@@ -21,10 +21,15 @@ var current_angle = 0.0
 var time_in_optimal_range = 0.0
 var game_over = false
 
+signal minigame_complete
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mixing_center = bowl.global_position 
+
+func start_game(): # Called from the main game script
 	mixing_timer.start()
+	game_timer.wait_time = 20 #Normal: 20 Debug: 5
 	game_timer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -80,5 +85,6 @@ func end_minigame(success):
 		instructions_label.text = "Mixing complete!"
 	else:
 		instructions_label.text = "What a mess!"
-	emit_signal("minigame_finished", success)
+	# Emit signal to notify main script
+	emit_signal("minigame_complete")
 

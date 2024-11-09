@@ -16,10 +16,14 @@ var love_level = 50
 var moving_up = true
 var game_over = false
 
+signal minigame_complete
+
 func _ready():
 	love_meter.value = love_level
-	oscillation_timer.start()  # Start the timer to increment love level
 	instructions_label.text = "Hit stop when you feel the love is just right."
+
+func start_game():
+	oscillation_timer.start()
 
 func _on_oscillation_timer_timeout():
 	if game_over:
@@ -59,6 +63,7 @@ func end_minigame(success):
 		instructions_label.text = "<3!"
 	else:
 		instructions_label.text = "The pie is missing the perfect touch of love."
+	emit_signal("minigame_complete")
 
 
 

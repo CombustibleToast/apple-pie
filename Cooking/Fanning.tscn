@@ -8,23 +8,7 @@ script = ExtResource("1_hyjgc")
 [node name="game_timer" type="Timer" parent="."]
 wait_time = 20.0
 
-[node name="timer_label" type="Label" parent="game_timer"]
-offset_left = 63.0
-offset_top = 35.0
-offset_right = 202.0
-offset_bottom = 58.0
-text = "Timer:"
-
 [node name="intensity_timer" type="Timer" parent="."]
-
-[node name="debug_control" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 80.0
-offset_top = 297.0
-offset_right = 304.0
-offset_bottom = 430.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -33,6 +17,13 @@ offset_left = 31.0
 offset_top = 39.0
 offset_right = 309.0
 offset_bottom = 199.0
+
+[node name="timer_label" type="Label" parent="Control"]
+offset_left = 32.0
+offset_top = -4.0
+offset_right = 171.0
+offset_bottom = 19.0
+text = "Timer:"
 
 [node name="flame_meter" type="ProgressBar" parent="Control"]
 layout_mode = 0

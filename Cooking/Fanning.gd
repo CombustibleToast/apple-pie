@@ -4,7 +4,7 @@ extends Node2D
 @onready var instructions_label = $Control/instructions_label
 @onready var intensity_timer = $intensity_timer
 @onready var game_timer = $game_timer
-@onready var timer_label = $game_timer/timer_label
+@onready var timer_label = $Control/timer_label
 
 # Constants
 const MAX_INTENSITY = 100 
@@ -17,10 +17,15 @@ var flame_intensity: int = 0
 var in_optimal_time: int = 0  # Time spent in the optimal range
 var game_over = false
 
+signal minigame_complete
+
 func _ready():
-	intensity_timer.start()
-	game_timer.start()
 	flame_meter.value = flame_intensity
+
+func start_game():
+	game_timer.wait_time = 20 #Normal: 20 Debug: 5
+	game_timer.start()
+	intensity_timer.start()
 
 # display the timer value
 func _process(_delta):
@@ -68,3 +73,4 @@ func end_minigame(success):
 		instructions_label.text = "Success! You kept the flame steady!"
 	else:
 		instructions_label.text = "Finish! You did alright..."
+	emit_signal("minigame_complete")

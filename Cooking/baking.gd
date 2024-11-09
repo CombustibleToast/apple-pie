@@ -17,10 +17,14 @@ const BAKING_SPEED = 10  # Speed at which the baking level increases (adjustable
 var baking_level = 0
 var game_over = false
 
+signal minigame_complete
+
 func _ready():
 	baking_meter.value = baking_level
-	baking_timer.start()  # Start the timer to increment baking level
 	instructions_label.text = "Wait for the perfect moment and hit stop!"
+
+func start_game():
+	baking_timer.start()
 
 func _on_baking_timer_timeout():
 	if not game_over:
@@ -53,3 +57,4 @@ func end_minigame(success):
 		instructions_label.text = "Baking complete!"
 	else:
 		instructions_label.text = "The pie isn't great, but it's edible."
+	emit_signal("minigame_complete")
