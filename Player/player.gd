@@ -4,10 +4,12 @@ extends CharacterBody3D
 enum Facing {LEFT, RIGHT, UP, DOWN}
 @onready var current_facing_direction:Facing = Facing.DOWN
 const SPEED = 5.0
-
+const WAIT_TIME = 0.4
+var time_since_played : float
 @onready var collected_items:Array = []
 
 func _process(delta: float) -> void:
+	time_since_played -= delta
 	update_animation()
 
 func _physics_process(delta: float) -> void:
@@ -59,6 +61,9 @@ func update_animation():
 	var animation_name:String = ""
 	if abs(current_velocity.length_squared()) > 0:
 		animation_name = "walk "
+		if time_since_played < 0: 
+			$CollisionShape3D/AudioStreamPlayer3D.play()
+			time_since_played = WAIT_TIME
 	else:
 		animation_name = "idle "
 
