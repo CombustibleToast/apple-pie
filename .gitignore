@@ -2,3 +2,7 @@
 .godot/
 /android/
 addons/gd-blender-3d-shortcuts/
+
+# Ignore VSCode settings
+.vscode/
+.vscode/settings.json
