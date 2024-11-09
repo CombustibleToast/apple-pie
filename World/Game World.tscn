@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b8aapkb7fo0v1"]
+[gd_scene load_steps=11 format=3 uid="uid://b8aapkb7fo0v1"]
 
 [ext_resource type="PackedScene" uid="uid://doa0cyqk7nqv7" path="res://Player/Player.tscn" id="1_kkvsl"]
 [ext_resource type="PackedScene" uid="uid://brrcb78686yjd" path="res://World/world-test.tscn" id="2_eflmq"]
 [ext_resource type="PackedScene" uid="uid://cjdjbe2oi2gam" path="res://Collectables/Collectable.tscn" id="3_0vhon"]
 [ext_resource type="Texture2D" uid="uid://du5ou5nq3wstj" path="res://Collectables/Sprites/apple.png" id="4_56hul"]
+[ext_resource type="PackedScene" uid="uid://36qjitppebt1" path="res://Granny/granny.tscn" id="5_naop2"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_gw2f5"]
 
@@ -63,6 +64,9 @@ environment = SubResource("Environment_l4nkn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05902, 4.76837e-07, -12.4457)
 
 [node name="Test Collectable Apple" parent="." instance=ExtResource("3_0vhon")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74205, 0.52867, -0.252512)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.842, 0, -1.428)
 collectable_name = "Test Apple"
 collectable_sprite = ExtResource("4_56hul")
+
+[node name="Area3D" parent="." instance=ExtResource("5_naop2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.62522, -0.0797061, -2.25415)

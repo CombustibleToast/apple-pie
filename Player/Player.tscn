@@ -19,7 +19,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.669861, 0)
 shape = SubResource("BoxShape3D_6w763")
 
 [node name="Area3D pickups" type="Area3D" parent="."]
-collision_layer = 8192
 collision_mask = 8192
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D pickups"]

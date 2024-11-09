@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 
 # Important: Collectables collision layer and mask is 14 (i picked it arbitrarily lol)
 func pickup_area_entered(area:Area3D) -> void:
-	# Add the item to the collected items array
+	# Add the item name to the collected items array
 	collected_items.append(area.collectable_name)
 
 	# Log
@@ -35,4 +35,3 @@ func pickup_area_entered(area:Area3D) -> void:
 
 	# Destroy the item from the world
 	area.queue_free()
-
