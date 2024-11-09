@@ -31,7 +31,7 @@ func pickup_area_entered(area:Area3D) -> void:
 	collected_items.append(area.collectable_name)
 
 	# Log
-	print("Player collected %s" % area.name)
+	print("Player collected %s" % area.collectable_name)
 
 	# Destroy the item from the world
 	area.queue_free()
