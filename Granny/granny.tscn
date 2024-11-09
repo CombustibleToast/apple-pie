@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://36qjitppebt1"]
+
+[ext_resource type="Texture2D" uid="uid://v47b64v5wedh" path="res://Granny/Sprites/granny static.png" id="1_1odsc"]
+[ext_resource type="Script" path="res://Granny/granny.gd" id="1_d48ib"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3q8sj"]
+radius = 1.71387
+height = 6.0943
+
+[node name="Granny" type="Area3D"]
+script = ExtResource("1_d48ib")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28499, 0)
+shape = SubResource("CapsuleShape3D_3q8sj")
+
+[node name="Granny Sprite" type="Sprite3D" parent="."]
+transform = Transform3D(15.089, 0, 0, 0, 15.089, 0, 0, 0, 15.089, 0, 1.329, 0)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_1odsc")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
