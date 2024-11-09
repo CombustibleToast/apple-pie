@@ -10,6 +10,7 @@ albedo_texture = ExtResource("2_fm0av")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
+texture_filter = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ld8pc"]
 _surfaces = [{
