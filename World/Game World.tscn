@@ -79,5 +79,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.842, 0, -1.428)
 collectable_name = "Test Apple"
 collectable_sprite = ExtResource("4_56hul")
 
-[node name="Area3D" parent="." instance=ExtResource("5_naop2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.62522, -0.0797061, -2.25415)
+[node name="Granny" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("5_naop2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.30939, -0.00777216, -1.57133)
+player_node = NodePath("../CharacterBody3D")

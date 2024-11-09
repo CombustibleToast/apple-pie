@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://doa0cyqk7nqv7"]
+[gd_scene load_steps=14 format=3 uid="uid://doa0cyqk7nqv7"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_au60o"]
 [ext_resource type="Texture2D" uid="uid://cwfvsk6ctoq2h" path="res://icon.svg" id="1_fn3hj"]
+[ext_resource type="Texture2D" uid="uid://cucp8yhbd7qh5" path="res://Player/Sprites/walk_up_down_sheet.png" id="3_sl74u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6w763"]
 size = Vector3(1, 1.33923, 1)
@@ -9,7 +10,78 @@ size = Vector3(1, 1.33923, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wlqp"]
 size = Vector3(1.06079, 1.44037, 1.05664)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7y7j0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgk6o"]
+atlas = ExtResource("3_sl74u")
+region = Rect2(17, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xk6c"]
+atlas = ExtResource("3_sl74u")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqgye"]
+atlas = ExtResource("3_sl74u")
+region = Rect2(17, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcwj3"]
+atlas = ExtResource("3_sl74u")
+region = Rect2(34, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wrni"]
+atlas = ExtResource("3_sl74u")
+region = Rect2(0, 18, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5b36"]
+atlas = ExtResource("3_sl74u")
+region = Rect2(17, 18, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_safj4"]
+atlas = ExtResource("3_sl74u")
+region = Rect2(34, 18, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aveas"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgk6o")
+}],
+"loop": true,
+"name": &"idle down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xk6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqgye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcwj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqgye")
+}],
+"loop": true,
+"name": &"walk down",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wrni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5b36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_safj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5b36")
+}],
+"loop": true,
+"name": &"walk up",
+"speed": 5.0
+}]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_au60o")
@@ -27,10 +99,15 @@ shape = SubResource("BoxShape3D_3wlqp")
 
 [node name="Placeholder Sprite" type="Sprite3D" parent="."]
 transform = Transform3D(0.766517, 0, 0, 0, 1.041, 0, 0, 0, 1, 0, 0.670697, 0)
+visible = false
 billboard = 1
 texture = ExtResource("1_fn3hj")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-sprite_frames = SubResource("SpriteFrames_7y7j0")
+transform = Transform3D(7.58, 0, 0, 0, 7.58, 0, 0, 0, 7.58, 0, 0.670697, 0)
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_aveas")
+animation = &"idle down"
 
 [connection signal="area_entered" from="Area3D pickups" to="." method="pickup_area_entered"]
