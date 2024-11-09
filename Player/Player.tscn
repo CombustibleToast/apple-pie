@@ -1,11 +1,27 @@
-[gd_scene load_steps=15 format=3 uid="uid://doa0cyqk7nqv7"]
+[gd_scene load_steps=22 format=3 uid="uid://doa0cyqk7nqv7"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_au60o"]
 [ext_resource type="Texture2D" uid="uid://cwfvsk6ctoq2h" path="res://icon.svg" id="1_fn3hj"]
+[ext_resource type="AudioStream" uid="uid://bijwtdjmvajtw" path="res://sounds/leaf0.wav" id="2_hk4ou"]
+[ext_resource type="AudioStream" uid="uid://xkwmnx37kgwt" path="res://sounds/leaf1.wav" id="3_m5ps5"]
 [ext_resource type="Texture2D" uid="uid://cucp8yhbd7qh5" path="res://Player/Sprites/walk_up_down_sheet.png" id="3_sl74u"]
+[ext_resource type="AudioStream" uid="uid://bx75spn2w75k0" path="res://sounds/leaf2.wav" id="4_1gi43"]
+[ext_resource type="AudioStream" uid="uid://bk4la3n0g1e7g" path="res://sounds/leaf3.wav" id="5_ejgqb"]
+[ext_resource type="AudioStream" uid="uid://b4l3jx3o7pn38" path="res://sounds/leaf4.wav" id="6_xom78"]
+[ext_resource type="AudioStream" uid="uid://o842btf6v0sx" path="res://sounds/leaf5.wav" id="7_7ll4k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6w763"]
 size = Vector3(1, 1.33923, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lhrgr"]
+random_pitch = 1.1
+streams_count = 6
+stream_0/stream = ExtResource("2_hk4ou")
+stream_1/stream = ExtResource("3_m5ps5")
+stream_2/stream = ExtResource("4_1gi43")
+stream_3/stream = ExtResource("5_ejgqb")
+stream_4/stream = ExtResource("6_xom78")
+stream_5/stream = ExtResource("7_7ll4k")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wlqp"]
 size = Vector3(1.06079, 1.44037, 1.05664)
@@ -121,6 +137,9 @@ script = ExtResource("1_au60o")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.669861, 0)
 shape = SubResource("BoxShape3D_6w763")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CollisionShape3D"]
+stream = SubResource("AudioStreamRandomizer_lhrgr")
 
 [node name="Area3D pickups" type="Area3D" parent="."]
 collision_mask = 8192
