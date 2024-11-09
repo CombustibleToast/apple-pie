@@ -2,9 +2,9 @@
 .godot/
 /android/
 addons/gd-blender-3d-shortcuts/
+addons/godot-git-plugin/*
+Builds
 
 # Ignore VSCode settings
 .vscode/
 .vscode/settings.json
-addons/godot-git-plugin/*
-Builds
