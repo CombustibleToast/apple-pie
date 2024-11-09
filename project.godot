@@ -15,6 +15,11 @@ run/main_scene="res://World/Game World.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1000
+window/size/viewport_height=700
+
 [editor]
 
 version_control/plugin_name="GitPlugin"

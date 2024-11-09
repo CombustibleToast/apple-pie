@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://doa0cyqk7nqv7"]
+[gd_scene load_steps=6 format=3 uid="uid://doa0cyqk7nqv7"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_au60o"]
 [ext_resource type="Texture2D" uid="uid://cwfvsk6ctoq2h" path="res://icon.svg" id="1_fn3hj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6w763"]
 size = Vector3(1, 1.33923, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3wlqp"]
+size = Vector3(1.06079, 1.44037, 1.05664)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7y7j0"]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_au60o")
@@ -13,7 +18,20 @@ script = ExtResource("1_au60o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.669861, 0)
 shape = SubResource("BoxShape3D_6w763")
 
+[node name="Area3D pickups" type="Area3D" parent="."]
+collision_layer = 8192
+collision_mask = 8192
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D pickups"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.703522, 0)
+shape = SubResource("BoxShape3D_3wlqp")
+
 [node name="Placeholder Sprite" type="Sprite3D" parent="."]
 transform = Transform3D(0.766517, 0, 0, 0, 1.041, 0, 0, 0, 1, 0, 0.670697, 0)
 billboard = 1
 texture = ExtResource("1_fn3hj")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7y7j0")
+
+[connection signal="area_entered" from="Area3D pickups" to="." method="pickup_area_entered"]

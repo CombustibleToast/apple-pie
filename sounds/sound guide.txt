@@ -1,0 +1,15 @@
+45643__snardin42__screen-door-opening-and-closing -- for entering / exiting the house
+380371__oeusse__e_major -- possible to use for achieving a goal
+380372__oeusse__e_menor -- possible to use for achieving a goal
+583754__bia12__brook -- brook / river ambience
+62591__bsumusictech__arch-leaf -- (ALREADY EDITED AND SEPARATED INTO LEAF0-5) to be used for walking on the leafy ground
+516870__sieuamthanh__go-chao-thep -- pot noise; possible to use for menu sounds?
+517042__sonidosreales245__forestday_bw66 -- forest ambience
+575407__mwsfx__running-away-from-mic-forest -- to use for "screen transitions" to other zones in the forest
+
+music folder
+40866__unclesigmund__gslide -- possible menu music
+714933__antenalosmusic__a-lonely-planet -- possible midgame wandering music
+750646__nancy_sinclair__dramatic-acoustic-guitar-music-for-cinematic-scenes -- possible midgame wandering music
+756741__christmaskrumble666__blinding-lights -- possible intro / house / grandma music
+754461__christmaskrumble666__cowboy-ghost-bgm -- possible conclusion music (very cozy vibes)
