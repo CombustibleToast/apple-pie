@@ -69,6 +69,5 @@ func update_animation():
 		Facing.LEFT: animation_name += "left"
 		Facing.RIGHT: animation_name += "right"
 
-
 	$AnimatedSprite3D.play(animation_name)
-	print("playing %s" % animation_name)
+	# print("playing %s" % animation_name)

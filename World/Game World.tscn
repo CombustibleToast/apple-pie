@@ -76,7 +76,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_mexdw")
 
 [node name="Test Collectable Apple" parent="." instance=ExtResource("3_0vhon")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.842, 0, -1.428)
-collectable_name = "Test Apple"
+collectable_name = "Apple 1"
 collectable_sprite = ExtResource("4_56hul")
 
 [node name="Granny" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("5_naop2")]

@@ -4,9 +4,9 @@ extends Area3D
 
 @onready var player_in_interact_range: bool = false
 @onready var required_item_list: Array = [
-	"Apple",
-	"Apple",
-	"Apple",
+	"Apple 1",
+	"Apple 2",
+	"Apple 3",
 	"Wheat",
 	"Sugar",
 ]
