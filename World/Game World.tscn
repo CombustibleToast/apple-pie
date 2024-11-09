@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://b8aapkb7fo0v1"]
 
 [ext_resource type="PackedScene" uid="uid://doa0cyqk7nqv7" path="res://Player/Player.tscn" id="1_kkvsl"]
-[ext_resource type="PackedScene" uid="uid://dxwx16qs0u431" path="res://World/world-test.tscn" id="2_eflmq"]
+[ext_resource type="PackedScene" uid="uid://brrcb78686yjd" path="res://World/world-test.tscn" id="2_eflmq"]
 [ext_resource type="PackedScene" uid="uid://cjdjbe2oi2gam" path="res://Collectables/Collectable.tscn" id="3_0vhon"]
 [ext_resource type="Texture2D" uid="uid://du5ou5nq3wstj" path="res://Collectables/Sprites/apple.png" id="4_56hul"]
 
@@ -26,15 +26,17 @@ fog_enabled = true
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_kkvsl")]
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.911116, 0.412151, 0, -0.412151, 0.911116, 0, 2.12054, 5.01089)
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 4, 5.16, 4)
+projection = 1
+size = 10.678
 
-[node name="Floor Mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, -4.37114e-08, 1, 0, -100, -4.37114e-06, 0, 0, 0)
+[node name="test floor mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-08, 1, 0, -100, -4.37114e-06, 0, -87.1338, 0)
 mesh = SubResource("QuadMesh_gw2f5")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor Mesh"]
+[node name="StaticBody3D" type="StaticBody3D" parent="test floor mesh"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor Mesh/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test floor mesh/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.44089e-16, -0.0194778)
 shape = SubResource("BoxShape3D_x8udt")
 
@@ -58,7 +60,7 @@ environment = SubResource("Environment_l4nkn")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 
 [node name="world-test" parent="." instance=ExtResource("2_eflmq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.5853, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05902, 4.76837e-07, -12.4457)
 
 [node name="Test Collectable Apple" parent="." instance=ExtResource("3_0vhon")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74205, 0.52867, -0.252512)
