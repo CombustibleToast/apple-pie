@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce01fdj5xj3gm"]
+
+[ext_resource type="Script" path="res://Cooking/mixing.gd" id="1_44wub"]
+
+[sub_resource type="Gradient" id="Gradient_eyd8o"]
+offsets = PackedFloat32Array(0, 0.521327, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.18359, 0.18359, 0.18359, 1, 0.0479112, 0.0263972, 4.51226e-09, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_io0mx"]
+gradient = SubResource("Gradient_eyd8o")
+
+[node name="Mixing" type="Node2D"]
+script = ExtResource("1_44wub")
+
+[node name="bowl" type="Sprite2D" parent="."]
+position = Vector2(472, 311)
+scale = Vector2(0.329502, 78.8125)
+texture = SubResource("GradientTexture1D_io0mx")
+
+[node name="mixing_indicator" type="Line2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 340.0
+offset_bottom = 242.0
+
+[node name="instructions_label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 133.0
+offset_right = 437.0
+offset_bottom = 156.0
+text = "Instructions"
+
+[node name="mixing_timer" type="Timer" parent="."]
+
+[node name="game_timer" type="Timer" parent="."]
+wait_time = 4.634
+
+[node name="timer_label" type="Label" parent="game_timer"]
+offset_left = 348.0
+offset_top = 167.0
+offset_right = 616.0
+offset_bottom = 190.0
+text = "timer"
+
+[connection signal="timeout" from="game_timer" to="." method="_on_game_timer_timeout"]
