@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://b8aapkb7fo0v1"]
 
 [ext_resource type="PackedScene" uid="uid://doa0cyqk7nqv7" path="res://Player/Player.tscn" id="1_kkvsl"]
-[ext_resource type="PackedScene" path="res://World/world-test.tscn" id="2_eflmq"]
+[ext_resource type="PackedScene" uid="uid://dxwx16qs0u431" path="res://World/world-test.tscn" id="2_eflmq"]
 [ext_resource type="PackedScene" uid="uid://cjdjbe2oi2gam" path="res://Collectables/Collectable.tscn" id="3_0vhon"]
 [ext_resource type="Texture2D" uid="uid://du5ou5nq3wstj" path="res://Collectables/Sprites/apple.png" id="4_56hul"]
 
