@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8aapkb7fo0v1"]
+[gd_scene load_steps=13 format=3 uid="uid://b8aapkb7fo0v1"]
 
 [ext_resource type="PackedScene" uid="uid://doa0cyqk7nqv7" path="res://Player/Player.tscn" id="1_kkvsl"]
 [ext_resource type="PackedScene" uid="uid://brrcb78686yjd" path="res://World/world-test.tscn" id="2_eflmq"]
@@ -21,6 +21,12 @@ background_color = Color(0.537941, 0.379969, 0.277438, 1)
 ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
 fog_enabled = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_rkh13"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mexdw"]
+transparency = 1
+albedo_color = Color(0.1325, 0.284875, 0.53, 0.360784)
 
 [node name="Node3D" type="Node3D"]
 
@@ -62,6 +68,11 @@ environment = SubResource("Environment_l4nkn")
 
 [node name="world-test" parent="." instance=ExtResource("2_eflmq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05902, 4.76837e-07, -12.4457)
+
+[node name="simple water" type="MeshInstance3D" parent="world-test"]
+transform = Transform3D(60.2211, 0, 0, 0, 4.18682e-06, 0.999999, 0, -31.9278, 1.31134e-07, -0.634, -1.428, 0)
+mesh = SubResource("QuadMesh_rkh13")
+surface_material_override/0 = SubResource("StandardMaterial3D_mexdw")
 
 [node name="Test Collectable Apple" parent="." instance=ExtResource("3_0vhon")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.842, 0, -1.428)
