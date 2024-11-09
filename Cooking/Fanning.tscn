@@ -35,12 +35,14 @@ offset_right = 309.0
 offset_bottom = 199.0
 
 [node name="flame_meter" type="ProgressBar" parent="Control"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 47.0
 offset_right = 206.0
 offset_bottom = 74.0
 
 [node name="instructions_label" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 89.0
 offset_right = 236.0
