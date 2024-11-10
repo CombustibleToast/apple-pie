@@ -330,6 +330,9 @@ func handle_superdirect(next : String):
 	var dest = next.get_slice(clarifier_delimiter, 2)
 	## @@ indicates SUPERDIRECTIONS -- allows for quickswapping
 	match(next.get_slice(clarifier_delimiter,0)):
+		"CLOSE":
+			max_min()
+			end_file()
 		"GOTO": ## GOTO@@ -- steps into a new passage
 			load_passage(dest)
 		"FILE": ## FILE@@ -- hotswaps to a new file
