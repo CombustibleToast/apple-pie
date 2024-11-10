@@ -8,7 +8,7 @@ extends Node2D
 @onready var game_timer_label = $Control/HBoxContainer/Control/timer_label
 
 # Constants
-const REQUIRED_DURATION = 2  # Time in seconds to maintain circular motion
+const REQUIRED_DURATION = 18  # Time in seconds to maintain circular motion
 const MIN_RADIUS = 50  # Minimum radius for circular motion
 const MAX_RADIUS = 250  # Maximum radius for circular motion
 const MIN_SPEED = 1  # Minimum angular speed (radians per frame)

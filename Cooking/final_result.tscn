@@ -20,11 +20,23 @@ centered = false
 [node name="results_label" type="Label" parent="."]
 offset_left = 49.0
 offset_top = 39.0
-offset_right = 945.0
+offset_right = 442.0
 offset_bottom = 674.0
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_myowx")
 text = "RESULTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="credit_label" type="Label" parent="."]
+offset_left = 522.0
+offset_top = 44.0
+offset_right = 915.0
+offset_bottom = 679.0
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_myowx")
+text = "Thank You for Playing out Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
