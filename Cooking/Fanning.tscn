@@ -1,44 +1,102 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmjls1ife05bp"]
+[gd_scene load_steps=3 format=3 uid="uid://cmjls1ife05bp"]
 
 [ext_resource type="Script" path="res://Cooking/Fanning.gd" id="1_hyjgc"]
+[ext_resource type="Texture2D" uid="uid://bsyvtp2sgudu4" path="res://Cooking/Sprites/FanningBaking.png" id="2_7che7"]
 
 [node name="Fanning" type="Node2D"]
 script = ExtResource("1_hyjgc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(499, 348)
+texture = ExtResource("2_7che7")
 
 [node name="game_timer" type="Timer" parent="."]
 wait_time = 20.0
 
 [node name="intensity_timer" type="Timer" parent="."]
+wait_time = 0.72
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 31.0
-offset_top = 39.0
-offset_right = 309.0
-offset_bottom = 199.0
+offset_left = 3.0
+offset_top = 510.0
+offset_right = 998.0
+offset_bottom = 690.0
 
-[node name="timer_label" type="Label" parent="Control"]
-offset_left = 32.0
-offset_top = -4.0
-offset_right = 171.0
-offset_bottom = 19.0
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.039
+anchor_right = 0.039
+offset_left = -42.805
+offset_top = 8.0
+offset_right = 961.195
+offset_bottom = 191.0
+color = Color(0.140447, 0.140447, 0.140447, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+offset_bottom = 8.0
+
+[node name="Control" type="Control" parent="Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="timer_label" type="Label" parent="Control/HBoxContainer/Control"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 34.0
+offset_right = 152.0
+offset_bottom = 169.0
 text = "Timer:"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="flame_meter" type="ProgressBar" parent="Control"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 47.0
-offset_right = 206.0
-offset_bottom = 74.0
+[node name="Control4" type="Control" parent="Control/HBoxContainer"]
+layout_mode = 2
 
-[node name="instructions_label" type="Label" parent="Control"]
+[node name="fan_button" type="Button" parent="Control/HBoxContainer/Control4"]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 89.0
-offset_right = 236.0
-offset_bottom = 112.0
-text = "This is a Label :)"
+offset_left = 454.0
+offset_top = 38.0
+offset_right = 690.0
+offset_bottom = 160.0
+
+[node name="Control2" type="Control" parent="Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="instructions_label" type="Label" parent="Control/HBoxContainer/Control2"]
+layout_mode = 2
+offset_left = 181.0
+offset_top = 39.0
+offset_right = 397.0
+offset_bottom = 160.0
+text = "Get ready to fan the flames!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="flame_meter" type="ProgressBar" parent="Control/HBoxContainer/Control3"]
+layout_mode = 0
+offset_left = 739.0
+offset_top = 38.0
+offset_right = 955.0
+offset_bottom = 161.0
+value = 25.0
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 82.0
+offset_top = 329.0
+offset_right = 160.0
+offset_bottom = 399.0
 
 [connection signal="timeout" from="game_timer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="intensity_timer" to="." method="_on_intensity_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

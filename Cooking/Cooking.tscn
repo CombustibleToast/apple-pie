@@ -3,19 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://x844jeddjpxf" path="res://Cooking/Baking.tscn" id="1_cjfy4"]
 [ext_resource type="Script" path="res://Cooking/cookingManager.gd" id="1_w1111"]
 [ext_resource type="PackedScene" uid="uid://cmjls1ife05bp" path="res://Cooking/Fanning.tscn" id="2_n0ase"]
+[ext_resource type="Texture2D" uid="uid://cfm4c07jq6jx4" path="res://Cooking/Sprites/Leaves.png" id="2_td5p3"]
 [ext_resource type="PackedScene" uid="uid://cqboxlnsjgpf3" path="res://Cooking/Love.tscn" id="3_hqyx0"]
 [ext_resource type="PackedScene" uid="uid://ce01fdj5xj3gm" path="res://Cooking/mixing.tscn" id="4_rtdsw"]
-[ext_resource type="Texture2D" uid="uid://dh0db2pgo7ne8" path="res://Cooking/Sprites/IMG_8270.JPG" id="5_y4442"]
 
 [node name="CookingMinigameManager" type="Node2D"]
 script = ExtResource("1_w1111")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(0.525101, 0.525101, 0.525101, 1)
-position = Vector2(519, 338)
-scale = Vector2(0.224537, 0.224537)
-texture = ExtResource("5_y4442")
+position = Vector2(501.866, 351.206)
+texture = ExtResource("2_td5p3")
 
 [node name="Baking" parent="." instance=ExtResource("1_cjfy4")]
 visible = false
