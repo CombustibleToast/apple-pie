@@ -10,8 +10,7 @@ extends Node2D
 const MAX_INTENSITY = 100 
 const MIN_OPTIMAL = 50  # Min intensity for the optimal range
 const MAX_OPTIMAL = 75  # Max intensity for the optimal range
-#debug value
-const REQUIRED_DURATION = 2  # Time (seconds) to maintain optimal range
+const REQUIRED_DURATION = 12  # Time (seconds) to maintain optimal range
 
 # Variables
 var flame_intensity: int = 50  # Initial flame intensity
