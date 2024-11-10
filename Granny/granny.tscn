@@ -8,6 +8,7 @@ radius = 1.71387
 height = 6.0943
 
 [node name="Granny" type="Area3D"]
+transform = Transform3D(0.690196, 0, 0, 0, 0.690196, 0, 0, 0, 0.690196, 0, 0, 0)
 script = ExtResource("1_d48ib")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
