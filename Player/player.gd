@@ -3,13 +3,18 @@ extends CharacterBody3D
 # Movement
 enum Facing {LEFT, RIGHT, UP, DOWN}
 @onready var current_facing_direction:Facing = Facing.DOWN
+@onready var special_animation = false
 const SPEED = 5.0
 const WAIT_TIME = 0.4
 var time_since_played : float
-@onready var collected_items:Array = []
 
 # Links
 @export var storyteller: Control
+
+# Item pickups
+@onready var collected_items:Array = []
+@export var item_pickup_animation_time:float = 2
+
 
 func _process(delta: float) -> void:
 	time_since_played -= delta
@@ -21,6 +26,9 @@ func _physics_process(delta: float) -> void:
 func update_movement(fixed_delta: float):
 	# Disallow player movement while sm is open
 	if storyteller.maximized:
+		return
+	# Disallow player movement during special animation
+	if special_animation:
 		return
 
 	# Add the gravity.
@@ -42,15 +50,13 @@ func update_movement(fixed_delta: float):
 # Important: Collectables collision layer and mask is 14 (i picked it arbitrarily lol)
 func pickup_area_entered(area:Area3D) -> void:
 	# Add the item name to the collected items array
-	collected_items.append(area.collectable_name)
-
-	# Log
-	print("Player collected %s" % area.collectable_name)
-
-	# Destroy the item from the world
-	area.queue_free()
+	add_item_to_collection(area)
 
 func update_animation():
+	# Don't do anything if there's a special animation going on
+	if special_animation:
+		return
+	
 	# Update sprite animation based on velocity
 
 	# Update facing direction
@@ -72,7 +78,7 @@ func update_animation():
 	if abs(current_velocity.length_squared()) > 0:
 		animation_name = "walk "
 		if time_since_played < 0: 
-			$CollisionShape3D/AudioStreamPlayer3D.play()
+			$AudioStreamPlayer3D.play()
 			time_since_played = WAIT_TIME
 	else:
 		animation_name = "idle "
@@ -86,3 +92,24 @@ func update_animation():
 
 	$AnimatedSprite3D.play(animation_name)
 	# print("playing %s" % animation_name)
+
+func add_item_to_collection(item:Area3D):
+	collected_items.append(item.collectable_name)
+
+	# Log
+	print("Player collected %s" % item.collectable_name)
+
+	# Play animation
+	special_animation = true
+	$AnimatedSprite3D.play("got item")
+	item.position = position + Vector3(0,2,0)
+	item.disable_pointer()
+	$"Got item sound".play()
+
+	# Wait for animation
+	await get_tree().create_timer(item_pickup_animation_time).timeout
+	special_animation = false
+	current_facing_direction = Facing.DOWN
+
+	# Destroy the item from the world
+	item.queue_free()

@@ -20,3 +20,6 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	# Spin pointer
 	$MeshInstance3D.rotate(Vector3(0,1,0), spin_rate * delta)
+
+func disable_pointer():
+	$MeshInstance3D.hide()
