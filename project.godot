@@ -15,6 +15,10 @@ run/main_scene="res://World/Game World.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ANIMA="*res://addons/anima/core/constants.gd"
+
 [display]
 
 window/size/viewport_width=1000
@@ -27,7 +31,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/anima/plugin.cfg")
 
 [input]
 

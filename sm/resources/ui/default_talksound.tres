@@ -1,0 +1,15 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=5 format=3 uid="uid://ckrbks8vy55xo"]
+
+[ext_resource type="AudioStream" uid="uid://ctci6rlbddob" path="res://sm/resources/audio/talk1.ogg" id="1_74jdc"]
+[ext_resource type="AudioStream" uid="uid://dpqhpkpp1hvwo" path="res://sm/resources/audio/talk2.ogg" id="2_8t7wa"]
+[ext_resource type="AudioStream" uid="uid://dega4r4te1bgr" path="res://sm/resources/audio/talk3.ogg" id="3_lyhkp"]
+[ext_resource type="AudioStream" uid="uid://bxby8s4p0wltu" path="res://sm/resources/audio/talk4.ogg" id="4_f3en6"]
+
+[resource]
+random_pitch = 1.2
+streams_count = 4
+stream_0/stream = ExtResource("1_74jdc")
+stream_1/stream = ExtResource("2_8t7wa")
+stream_2/stream = ExtResource("3_lyhkp")
+stream_3/stream = ExtResource("4_f3en6")
+metadata/Description = "Default talksound randomizer."

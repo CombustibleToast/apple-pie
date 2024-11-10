@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dxa8skvgfs5dv"]
+
+[node name="RichTextLabel" type="RichTextLabel"]
+custom_minimum_size = Vector2(400, 25)
+size_flags_horizontal = 4
+size_flags_vertical = 3
+tooltip_text = " the choice is yours "
+bbcode_enabled = true
+text = "[color=purple][url]>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+fit_content = true
+scroll_active = false

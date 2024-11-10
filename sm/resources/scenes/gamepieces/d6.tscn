@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgh2y338hjawi"]
+
+[ext_resource type="Script" path="res://scenes/gamepieces/d6.gd" id="1_xb48n"]
+[ext_resource type="Texture2D" uid="uid://ymomcabuw5ta" path="res://models/mdl_d6_d6txture.png" id="2_n48r4"]
+[ext_resource type="ArrayMesh" uid="uid://bx77chxrpjoro" path="res://models/d6.obj" id="3_qoner"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yol2a"]
+size = Vector3(1.976, 1.976, 1.976)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1pnq"]
+albedo_texture = ExtResource("2_n48r4")
+texture_repeat = false
+
+[node name="D6" type="Node3D"]
+editor_description = "Dice."
+rotation_order = 0
+top_level = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012207, 0.0219727)
+shape = SubResource("BoxShape3D_yol2a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_g1pnq")
+mesh = ExtResource("3_qoner")
+script = ExtResource("1_xb48n")

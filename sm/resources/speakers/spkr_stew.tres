@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Speaker" load_steps=6 format=3 uid="uid://dy4kc8cofvs6t"]
+
+[ext_resource type="Script" path="res://sm/scripts/speaker.gd" id="1_1y21i"]
+[ext_resource type="Texture2D" uid="uid://bn04k1rqpk44p" path="res://sm/images/chaticons/icon_stew.png" id="1_shmpf"]
+[ext_resource type="AudioStream" uid="uid://dqyxgd40disfg" path="res://sm/resources/audio/talk-stew1.ogg" id="3_ietwn"]
+[ext_resource type="AudioStream" uid="uid://baqvvu4fkulda" path="res://sm/resources/audio/talk-stew2.ogg" id="4_x8cik"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3kkwd"]
+streams_count = 2
+stream_0/stream = ExtResource("3_ietwn")
+stream_1/stream = ExtResource("4_x8cik")
+
+[resource]
+script = ExtResource("1_1y21i")
+internal = "stew"
+icon = ExtResource("1_shmpf")
+display = "STEW, the Elasmobranch"
+name_color = "turquoise"
+text_tags = Array[String](["character", "shaky"])
+talksound = SubResource("AudioStreamRandomizer_3kkwd")
+base_pitch = 0.25

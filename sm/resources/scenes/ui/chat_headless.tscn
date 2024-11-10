@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvobjr7jtqha3"]
+
+[ext_resource type="PackedScene" uid="uid://bkv2qvn8q0ei" path="res://scenes/ui/chat.tscn" id="1_r7ytr"]
+
+[node name="Chat" instance=ExtResource("1_r7ytr")]
+custom_minimum_size = Vector2(0, 60)
+offset_top = -37.0
+offset_bottom = -1007.0
+
+[node name="Label" parent="." index="0"]
+custom_minimum_size = Vector2(0, 23)
+text = "[shake rate=10.0][color=red]EMPTY!!"
+
+[node name="Background" parent="Label" index="1"]
+custom_minimum_size = Vector2(0, 60)
+anchor_right = 0.921
+offset_left = -6.0
+offset_top = -17.0
+offset_right = 30.86
+offset_bottom = 20.0
+
+[node name="Talksprite" parent="Label/Background" index="0"]
+visible = false

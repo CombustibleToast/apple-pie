@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Speaker" load_steps=3 format=3 uid="uid://wouewmloiwwj"]
+
+[ext_resource type="Texture2D" uid="uid://k0y8nfnpul1o" path="res://sm/images/chaticons/icon_box.png" id="1_14q8x"]
+[ext_resource type="Script" path="res://sm/scripts/speaker.gd" id="1_nhdrb"]
+
+[resource]
+resource_name = "Box"
+script = ExtResource("1_nhdrb")
+internal = "box"
+icon = ExtResource("1_14q8x")
+display = "THE BOX"
+name_color = "snow"
+text_tags = Array[String](["force_narration"])
+base_pitch = 1.0

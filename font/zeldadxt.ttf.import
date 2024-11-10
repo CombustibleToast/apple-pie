@@ -1,0 +1,40 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://bnkplyfxcxxfa"
+path="res://.godot/imported/zeldadxt.ttf-44964ca0425711be03a9b4a9c8b8a4fb.fontdata"
+
+[deps]
+
+source_file="res://font/zeldadxt.ttf"
+dest_files=["res://.godot/imported/zeldadxt.ttf-44964ca0425711be03a9b4a9c8b8a4fb.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=0
+generate_mipmaps=false
+disable_embedded_bitmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=false
+force_autohinter=false
+hinting=2
+subpixel_positioning=0
+oversampling=10.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=false
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0),
+"variation_embolden": 0.0
+}]
+language_support={}
+script_support={}
+opentype_features={}

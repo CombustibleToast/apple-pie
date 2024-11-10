@@ -1,0 +1,159 @@
+[gd_scene load_steps=11 format=3 uid="uid://duvq858lo1rqu"]
+
+[ext_resource type="Script" path="res://scenes/gamepieces/tile.gd" id="1_qf665"]
+[ext_resource type="Texture2D" uid="uid://c3qxb8f8nnblw" path="res://models/mdl_tile_tiletxture.png" id="2_84u0f"]
+[ext_resource type="ArrayMesh" uid="uid://babrtsum05qwh" path="res://models/tile.obj" id="3_fvr72"]
+
+[sub_resource type="Animation" id="Animation_h66jg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w7xdl"]
+resource_name = "hover_up"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.53333, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1, 0), Vector3(0, 1.1, 0), Vector3(0, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.53333, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0872665, 0, 0.0872665), Vector3(-0.0872665, 0, -0.0872665), Vector3(0.0872665, 0, 0.0872665)]
+}
+
+[sub_resource type="Animation" id="Animation_5bnyi"]
+resource_name = "lower"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w0n78"]
+resource_name = "raise"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y8jyy"]
+_data = {
+"RESET": SubResource("Animation_h66jg"),
+"hover_up": SubResource("Animation_w7xdl"),
+"lower": SubResource("Animation_5bnyi"),
+"raise": SubResource("Animation_w0n78")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iebvj"]
+size = Vector3(2.8, 0.246, 2.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yk3aw"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_84u0f")
+albedo_texture_msdf = true
+metallic = 1.0
+metallic_texture = ExtResource("2_84u0f")
+metallic_texture_channel = 4
+
+[node name="Tile" type="Node3D"]
+editor_description = "Tile. Can be painted and animated."
+script = ExtResource("1_qf665")
+
+[node name="BADAnimationPlayer" type="AnimationPlayer" parent="."]
+active = false
+libraries = {
+"": SubResource("AnimationLibrary_y8jyy")
+}
+next/lower = &"RESET"
+blend_times = [&"hover_up", &"hover_up", 20.0, &"lower", &"hover_up", 50.0, &"raise", &"hover_up", 50.0]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0450332, 0)
+shape = SubResource("BoxShape3D_iebvj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("3_fvr72")
+surface_material_override/0 = SubResource("StandardMaterial3D_yk3aw")
+
+[connection signal="mouse_entered" from="StaticBody3D" to="." method="paint" binds= [Color(1, 1, 0.429688, 1)]]
+[connection signal="mouse_exited" from="StaticBody3D" to="." method="unpaint"]

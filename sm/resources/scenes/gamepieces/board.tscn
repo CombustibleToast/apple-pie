@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4olqu1m5g314"]
+
+[ext_resource type="Script" path="res://scenes/gamepieces/board.gd" id="1_dyw6y"]
+
+[node name="Board" type="Node3D"]
+editor_description = "Handles the board and its gamestate. Spawns and handles tiles."
+script = ExtResource("1_dyw6y")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="started_ng" from="." to="." method="_new_board"]

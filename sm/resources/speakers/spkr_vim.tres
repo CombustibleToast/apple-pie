@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Speaker" load_steps=4 format=3 uid="uid://dxjx8nwp10abr"]
+
+[ext_resource type="Script" path="res://sm/scripts/speaker.gd" id="1_5lnbs"]
+[ext_resource type="Texture2D" uid="uid://cd3qhmamyatto" path="res://sm/images/chaticons/icon_vim.png" id="1_ao3jh"]
+[ext_resource type="AudioStream" uid="uid://ckrbks8vy55xo" path="res://sm/resources/ui/default_talksound.tres" id="3_opied"]
+
+[resource]
+resource_name = "Vim"
+script = ExtResource("1_5lnbs")
+internal = "vim"
+icon = ExtResource("1_ao3jh")
+display = "YOU"
+name_color = "mediumpurple"
+text_tags = Array[String](["self", "character", "shaky"])
+talksound = ExtResource("3_opied")
+base_pitch = 2.0

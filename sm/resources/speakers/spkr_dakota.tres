@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Speaker" load_steps=4 format=3 uid="uid://bhw2jmxunbb7e"]
+
+[ext_resource type="Texture2D" uid="uid://cbq3rbrub1oh5" path="res://sm/images/chaticons/icon_dakota.png" id="1_ge6km"]
+[ext_resource type="Script" path="res://sm/scripts/speaker.gd" id="2_rhnij"]
+[ext_resource type="AudioStream" uid="uid://ckrbks8vy55xo" path="res://sm/resources/ui/default_talksound.tres" id="3_8h0f2"]
+
+[resource]
+resource_name = "Dakota"
+script = ExtResource("2_rhnij")
+internal = "dakota"
+icon = ExtResource("1_ge6km")
+display = "DAKOTA, the Witch"
+name_color = "royalblue"
+text_tags = Array[String](["character"])
+talksound = ExtResource("3_8h0f2")
+base_pitch = 1.2

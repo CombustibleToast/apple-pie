@@ -1,0 +1,129 @@
+# Test comment
+start
+	dakota
+		"What do you have there, Vim?"
+	vim
+		"Something from -- underneath!"
+	dakota
+		Your mimicked words, if not the [url=dragging]heavy dragging noise[/url], draw their attention away from dinner, which continues to make itself.
+	box
+		The box in your talons is old and well-crafted, made of wood well-hewn, covered in a thick layer of dust.
+		Looks like it hasn't been touched in a century, which...
+		Well, knowing the mistress and his fancies, that is entirely possible.
+	stew
+		Stew dips through the air, indicating the coffee table. The expression on Stew's face is as placid as ever.
+		"..."
+	vim
+		You give the assistant's assistant a little nod.
+	box
+		With your mage hand and claws together, you heft the box. It is heavier, even more than you expect. 
+		...Your grip fails! The box [b]strikes[/b] the table. 
+		A loud clatter rings out like a thousand little pieces are inside.
+	vim
+		"Sorry, sorry," you mumble.
+		"It's a secret for you and me..."
+			SHOWIF@DEBUG
+	dakota
+		She smiles warmly. "It's no matter..."
+	LINK@vim
+		>what : "So..."
+		>END : Test. Ends active conversation. (This text will appear parenthetically.)
+			SHOWIF@DEBUG
+
+!dragging
+		The weight is a lot to bear... you weren't exactly trying to be stealthy.
+
+what
+	vim
+		"What is?" You gesture vaguely at the box with your wings.
+	dakota
+		She laughs. "You're the one who brought it all the way up the stairs..."
+	vim
+		"It was... pretty. Looked important!"
+		"Oh, and, Stew -- Stew helped!" You gesture at the shark-shaped water elemental.
+	dakota
+		The witch glances to Stew accusatorily, a playful smile on his lips. 
+		"Did YOU tell aer what it is?"
+	stew
+		"..."
+		As though Stew didn't hear, the shark drifts along, away from you and the Witch, and back into the stairwell.
+	vim
+		Dakota's attention is back on you. You must make the most of your guess. 
+		"It is... a game! I think..."
+	dakota
+		The witch's eyes scan the box more analytically.
+		Suddenly, her face changes. "...Oh, no way!" 
+		"It was down there all this time, huh..."
+	vim
+		"What?" you say, in alarm. "What what what?"
+	dakota
+		"Steer clear, feather duster." She draws a steady breath.
+		"[code]PoUi'SaPa, Uy'CaFaAn.[/code]"
+		The magic words follow the motion of her wrist... 
+	box
+		...and the dust begins to fade.
+		The wooden shell is significantly less gray than before... and significantly more [url=intricate]ornate[/url], that you can tell.
+		Runes line the corners of the box... But you've no idea what they mean.
+	vim
+		But the mistress's words... You know them. And... it was something about the way she said...
+		"...'Good friend'?"
+	dakota
+		They laugh gently, in amazement. The Graven Witch seems more remiss than usual.
+		"I can't believe I held onto this," she bemuses breathlessly. "Take a look here, V."
+	box
+		The witch slides a gloved finger along the edge of the box, through the dust. The inscription in a language you cannot read is unveiled.
+		Dakota reads the inscription aloud:
+		[b]"THE SIX DEATHS".[/b]
+		Candles in the corners of the room dance and flicker. Your feathers feel the cool wind...
+	vim
+		"Is it... A game?" you chitter nervously. "Or is it a 'friend'?"
+	dakota
+		She nods to your puzzled expression. "It's a game, alright. THE game of my younger years..."
+		"And a... friend, of sorts?" he smirks. "A companion, for sure."
+		"I think these days it's called [b]Knifepoint[/b]?" they say. "I can explain some more about it..."
+		"...or you could crack this thing open and learn more yourself." She waves a hand over the box. "Your choice."
+	LINK@vim
+		>deadly : "Is it... deadly?"
+
+!intricate
+		You see a lattice of beams across its surface: some arcanized iron, some toughened elvenwood, some you can't place. A hodgepodge of materials, interwoven... or reinforced, remade over time?
+
+deadly
+	vim
+		Your feathers puff up.
+		"Six deaths? Knifepoint?" you say sheepishly. "Does the game... kill?"
+	dakota
+		Reassuringly, the witch shakes her head. "Nah. It's just an allusion."
+		"...Supposedly." They smirk.
+	vim
+		"T-to what?"
+	dakota
+		"It's, ah..." Her ears flutter nervously. 
+		"Ancient, ancient history; records really are only kept only by the [url=mchild]moon-children[/url]."
+		Her gaze flits to the space over the grand fireplace, where a map of Bullion hangs.
+		"It's said that when they were first born into this world, they took with them knowledge of doom..."
+		"They called it something like, the '[b]Existences of Death[/b]', plural..."
+	vim
+		It is possible some of this is ringing a bell...
+		You stare at the map of Bullion with a renewed curiosity.
+	dakota
+		"...So, this knowledge became a part of their broader culture when they came here."
+		"[i]Six Deaths bring the first of wars; to set the truth, to find the door...[/i]" she mumbles in a sing-songy voice.
+		She closes her eyes for a moment, smiles, as though remembering something, then looks back at you. 
+		"...Never heard any of that?"
+	vim
+		You shake your head. You've never heard most of these words before in your life.
+	dakota
+		He smirks coyly. "...I sometimes forget you're not from the Wild Blue."
+		"Either way, it's not a super important name. It's just an allusion to [b]the game's creators[/b]."
+		"The name has some significance to ludology, but really... it's just a game with dice." They smile. "Harmless."
+	vim
+		"What is a... ludology?"
+	dakota
+		"It's like... research about games...?" She clears her throat. "It's not really important, heh."
+		They look over the box. "I had a very stern teacher about this type of cultural stuff... and..."
+		Dakota's expression changes visibly.
+		"Well, hey, I bet some of my old notes are still in this thing."
+
+!mchild
+	"Y'know, the harengon?" She smiles back at you. "Rabbitfolk, some say..."
