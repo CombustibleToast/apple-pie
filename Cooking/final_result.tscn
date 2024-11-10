@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://ojl26tamq3p6"]
+
+[ext_resource type="Script" path="res://Cooking/final_result.gd" id="1_ln5we"]
+[ext_resource type="Texture2D" uid="uid://cfm4c07jq6jx4" path="res://Cooking/Sprites/Leaves.png" id="1_xch5e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myowx"]
+bg_color = Color(0.105882, 0.105882, 0.105882, 0.494118)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[node name="FinalResult" type="Node2D"]
+script = ExtResource("1_ln5we")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xch5e")
+centered = false
+
+[node name="results_label" type="Label" parent="."]
+offset_left = 49.0
+offset_top = 39.0
+offset_right = 945.0
+offset_bottom = 674.0
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_myowx")
+text = "RESULTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
