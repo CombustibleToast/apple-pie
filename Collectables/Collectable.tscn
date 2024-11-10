@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjdjbe2oi2gam"]
+[gd_scene load_steps=3 format=3 uid="uid://cjdjbe2oi2gam"]
 
 [ext_resource type="Script" path="res://Collectables/collectable.gd" id="1_4x2xu"]
-[ext_resource type="Texture2D" uid="uid://cwfvsk6ctoq2h" path="res://icon.svg" id="1_jkglo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hbqgr"]
 
@@ -15,7 +14,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.565, 0)
 shape = SubResource("CapsuleShape3D_hbqgr")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.746856, 0, 0, 0, 0.746856, 0, 0, 0, 0.746856, 0, 0.487, 0)
+transform = Transform3D(5.75527, 0, 0, 0, 5.75527, 0, 0, 0, 5.75527, 0, 0.487, 0)
 billboard = 1
 texture_filter = 0
-texture = ExtResource("1_jkglo")
