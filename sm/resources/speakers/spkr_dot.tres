@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Speaker" load_steps=3 format=3 uid="uid://cglnyq6d30du0"]
+
+[ext_resource type="Texture2D" uid="uid://dt4o6o3ambdk7" path="res://Player/Sprites/dotportrait.png" id="1_b13kb"]
+[ext_resource type="Script" path="res://sm/scripts/speaker.gd" id="2_ph55o"]
+
+[resource]
+script = ExtResource("2_ph55o")
+internal = "granny"
+icon = ExtResource("1_b13kb")
+display = "Dot"
+name_color = "orange"
+text_tags = Array[String](["self"])
+base_pitch = 2.4

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Speaker" load_steps=3 format=3 uid="uid://baa8p0xsshhhd"]
+
+[ext_resource type="Texture2D" uid="uid://c3o153tcxmfj0" path="res://Granny/Sprites/granny_portrait.png" id="1_jgyp2"]
+[ext_resource type="Script" path="res://sm/scripts/speaker.gd" id="1_vy13v"]
+
+[resource]
+script = ExtResource("1_vy13v")
+internal = "granny"
+icon = ExtResource("1_jgyp2")
+display = "Granny"
+name_color = "royalblue"
+text_tags = Array[String](["character"])
+base_pitch = 0.75

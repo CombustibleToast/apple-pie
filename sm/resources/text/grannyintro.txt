@@ -1,0 +1,22 @@
+# comment
+start
+	granny
+		"Hello Dot."
+	dot
+		"..."
+	granny 
+		"The ritual... You must complete it..."
+	dot
+		You look nervously at Granny. She's usually like this but something is off this time.
+		"What should I do?"
+	granny
+		A smile cracks across her face
+		"Collect the necessary ingredients my dear grandchild."
+		"Three fruits of the first sin."
+		"A sacred gift of Demeter."
+		"And some white gold powder."
+		She cackles as she turns back to the campfire
+	dot
+		"O- Ok Granny."
+	LINK@dot
+		>END : Turn away
