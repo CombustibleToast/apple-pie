@@ -1,22 +1,30 @@
 # Played at the very start of the game
 start
 	granny
-		"Hello Dot."
+		You trod down the path towards the clearing -- and grandma is there, sitting on a stump quietly.
+		You think she is humming something casually...
+		She turns to you as you approach. "...Hello, Dot."
 	dot
-		"..."
+		"..." You nod cordially.
+		"Good morning, Granny."
+		"What's on the docket for today?"
 	granny 
-		"The ritual... We must complete it..."
+		"The ritual..." Her brows furrow mysteriously. 
+		"We must complete it..." She clears her throat. 
+		"[i]You[/i] must... It is... vital!"
 	dot
-		You look nervously at Granny. She's usually like this but something is off this time.
-		"What should I do?"
+		You look nervously at Granny. She's usually like this, but something is off this time.
+		"What should I do? How can I help?"
 	granny
-		A smile cracks across her face
-		"Collect the necessary ingredients my dear grandchild."
-		"Three fruits of the first sin."
-		"A sacred gift of Demeter."
-		"And some white gold powder."
-		She cackles as she turns back to the campfire
-		"Now Go Dot!"
+		A smile cracks across her face.
+		"Collect the necessary ingredients, my dear grandchild."
+		She gazes into the forest around you. As though to punctuate her point, leaves casually tumble from the trees around you.
+		"...[b]Three fruits[/b] of the first sin."
+		"A sacred [b]gift of Demeter[/b]."
+		"And... some [b]white-gold[/b] powder."
+		She cackles as she turns back to the campfire, and imbues her gaze with all the spirit it can muster. 
+		"Now, go, Dot!"
 	dot
-		"O- Ok Granny."
+		You stammer a moment, before...
+		...nodding confidently. "OK, Granny."
 	CLOSE@@

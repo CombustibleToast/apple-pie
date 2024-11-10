@@ -1,12 +1,21 @@
 # Played when the player speaks to granny once they've collected all the items
 start
 	granny
-		"Hello my child, have you collected all the required ingredients yet?"
+		"Ah..." She nods to your approach.
+		"Hello, my child!" She smiles warmly. "Have you collected all the required ingredients yet?"
 	dot
-		You show granny the items you've collected
+		Your hefty basket is a bit much for your childly arms to carry.
+		"I think, granny!"
 	granny 
-		A familiar smile cracks across her face
-		"Well done Dot. We may now begin the ritual. Come join me at the campfire."
+		A familiar smile cracks across her face.
+		Her eyes issue a sense of resolved urgency.
+		"Well done, Dot. We may now begin the ritual." 
+		"Come," she says, patting a seat next to her. "Join me at the campfire."
 	dot
-		"..."
+		You set the basket down nearby Granny.
+		"...Is this ritual part of my training?"
+	granny
+		"Of a sort..." She laughs. "It is a good day for physical labor!" 
+		"Now, keep the fire warm..."
+		"And we shall go to work!"
 	CLOSE@@
