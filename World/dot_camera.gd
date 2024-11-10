@@ -21,10 +21,6 @@ func _physics_process(delta: float) -> void:
 func update_position():
 	var net_translation: Vector3 = default_translation + delta_paused_translation
 	if storyteller.maximized:
-		position.x = move_toward(default_translation.x, net_translation.x, delta_transition_rate)
-		position.y = move_toward(default_translation.y, net_translation.y, delta_transition_rate)
-		position.z = move_toward(default_translation.z, net_translation.z, delta_transition_rate)
+		position = net_translation
 	else:
-		position.x = move_toward(net_translation.x, default_translation.x, delta_transition_rate)
-		position.y = move_toward(net_translation.y, default_translation.y, delta_transition_rate)
-		position.z = move_toward(net_translation.z, default_translation.z, delta_transition_rate)
+		position = default_translation
