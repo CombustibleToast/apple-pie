@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://bk4la3n0g1e7g" path="res://sounds/leaf3.wav" id="5_ejgqb"]
 [ext_resource type="AudioStream" uid="uid://b4l3jx3o7pn38" path="res://sounds/leaf4.wav" id="6_xom78"]
 [ext_resource type="AudioStream" uid="uid://o842btf6v0sx" path="res://sounds/leaf5.wav" id="7_7ll4k"]
-[ext_resource type="AudioStream" uid="uid://bqq6m1ifno0rn" path="res://sounds/516870__sieuamthanh__go-chao-thep.wav" id="8_qn83q"]
+[ext_resource type="AudioStream" uid="uid://c1ggidc0bem8r" path="res://sounds/380371__oeusse__e_major.mp3" id="8_3g5xc"]
 [ext_resource type="Texture2D" uid="uid://py5evxu5x35x" path="res://Player/Sprites/dot_get.png" id="9_ajcif"]
 [ext_resource type="Texture2D" uid="uid://dccv7cejj261n" path="res://Player/Sprites/dot_walk.png" id="9_gllx8"]
 
@@ -216,7 +216,7 @@ stream = SubResource("AudioStreamRandomizer_lhrgr")
 
 [node name="Got item sound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.669861, 0)
-stream = ExtResource("8_qn83q")
+stream = ExtResource("8_3g5xc")
 volume_db = 6.452
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
