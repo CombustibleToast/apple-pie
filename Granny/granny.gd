@@ -11,6 +11,9 @@ extends Area3D
 	"Dough",
 	"Sugar",
 ]
+# @onready var required_item_list: Array = []
+
+@onready var check_sm_minimized_load_new_scene_jank:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,6 +24,10 @@ func _process(delta: float) -> void:
 	# Check for interaction
 	if player_in_interact_range and Input.is_action_just_pressed("interact"):
 		trigger_interaction()
+
+	# Check if a new scene should be loaded
+	if check_sm_minimized_load_new_scene_jank and not storyteller.maximized:
+		get_tree().change_scene_to_file("res://Cooking/Cooking.tscn")
 
 func trigger_interaction():
 	print("Player interacted with %s!" % name)
@@ -52,7 +59,8 @@ func check_ingredient_completion():
 	#	Not implemented, so just print that all items are gotten
 	else:
 		print("Player has all items!")
-		storyteller.ext_load_file("granny_all_items") 
+		storyteller.ext_load_file("granny_all_items")
+		check_sm_minimized_load_new_scene_jank = true
 
 func _on_area_entered(area:Area3D) -> void:
 	print("%s detected entry from %s" % [name, area.name])
