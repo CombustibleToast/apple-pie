@@ -18,7 +18,7 @@ start
 	granny
 		A smile cracks across her face.
 		"Collect the necessary ingredients, my dear grandchild."
-		She gazes into the forest around you. As though to punctuate her point, leaves casually tumble from the trees around you.
+		She gazes into the forest around you. As though to punctuate her point, leaves casually tumble from the trees.
 		"...[b]Three fruits[/b] of the first sin."
 		"A sacred [b]gift of Demeter[/b]."
 		"And... some [b]white-gold[/b] powder."
