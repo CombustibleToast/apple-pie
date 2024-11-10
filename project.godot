@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="apple pie"
-run/main_scene="res://World/Game World.tscn"
+run/main_scene="res://Title Screen/title_screen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
