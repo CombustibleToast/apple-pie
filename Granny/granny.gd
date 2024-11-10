@@ -7,7 +7,7 @@ extends Area3D
 	"Apple 1",
 	"Apple 2",
 	"Apple 3",
-	"Wheat",
+	"Dough",
 	"Sugar",
 ]
 
