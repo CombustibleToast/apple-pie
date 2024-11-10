@@ -1,0 +1,151 @@
+[gd_scene load_steps=13 format=3 uid="uid://cy8ryw67ggu7p"]
+
+[ext_resource type="Theme" uid="uid://7yyom16lns3r" path="res://sm/resources/ui/ui_theme_test.tres" id="1_rrfbf"]
+[ext_resource type="Script" path="res://sm/scripts/storyteller.gd" id="2_xa2rr"]
+[ext_resource type="Script" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="3_8hfe0"]
+[ext_resource type="Script" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="4_f0sol"]
+[ext_resource type="StyleBox" uid="uid://b5g5hy1xl2lkt" path="res://sm/resources/ui/ui_dialogue_box.tres" id="5_ppwa5"]
+[ext_resource type="AudioStream" uid="uid://vcxcani54o6e" path="res://sm/resources/audio/click.ogg" id="6_umwkh"]
+[ext_resource type="AudioStream" uid="uid://bxrtw6p4306sf" path="res://sm/resources/audio/carriage_return.ogg" id="7_golkn"]
+[ext_resource type="AudioStream" uid="uid://bxbktjv2ponf" path="res://sm/resources/audio/kaclick.ogg" id="8_g61i1"]
+
+[sub_resource type="Resource" id="Resource_wxdln"]
+script = ExtResource("4_f0sol")
+friction = 4.0
+minimum_velocity = 0.4
+rebound_strength = 7.0
+
+[sub_resource type="Resource" id="Resource_is7x3"]
+script = ExtResource("4_f0sol")
+friction = 4.0
+minimum_velocity = 0.4
+rebound_strength = 7.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_er8v6"]
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("6_umwkh")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fht4j"]
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("7_golkn")
+
+[node name="Storyteller" type="MarginContainer"]
+editor_description = "Dialogue parsing object for story mode, spawns dialogue boxes and context."
+clip_contents = true
+custom_minimum_size = Vector2(580, 0)
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+mouse_force_pass_scroll_events = false
+theme = ExtResource("1_rrfbf")
+theme_override_constants/margin_left = 0
+script = ExtResource("2_xa2rr")
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+clip_children = 2
+clip_contents = true
+custom_minimum_size = Vector2(0, 1072)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("5_ppwa5")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+clip_contents = false
+custom_minimum_size = Vector2(520.1, 950)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 48.0
+offset_bottom = -5.0
+grow_vertical = 2
+size_flags_horizontal = 4
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+script = ExtResource("3_8hfe0")
+wheel_scroll_damper = SubResource("Resource_wxdln")
+dragging_scroll_damper = SubResource("Resource_is7x3")
+drag_with_mouse = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+custom_minimum_size = Vector2(450, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="ADVANCETEXT" type="CenterContainer" parent="Panel/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 52.945)
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="Panel/ScrollContainer/VBoxContainer/ADVANCETEXT"]
+clip_contents = false
+custom_minimum_size = Vector2(441.915, 0)
+layout_mode = 2
+mouse_filter = 1
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+visible_characters_behavior = 1
+
+[node name="Buttons" type="Control" parent="."]
+clip_children = 2
+clip_contents = true
+custom_minimum_size = Vector2(0, 33.245)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MinButton" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.0
+offset_bottom = 32.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "  "
+clip_text = true
+expand_icon = true
+
+[node name="MaxButton" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+offset_right = 32.0
+offset_bottom = 32.0
+rotation = -1.5708
+pivot_offset = Vector2(16, 16)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Talker" type="AudioStreamPlayer" parent="."]
+volume_db = -30.0
+
+[node name="Clicker" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_er8v6")
+volume_db = -15.0
+pitch_scale = 0.9
+
+[node name="CarriageReturn" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_fht4j")
+volume_db = -10.0
+pitch_scale = 2.0
+
+[node name="Kaclicker" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_g61i1")
+volume_db = -15.0
+
+[connection signal="gui_input" from="Panel/ScrollContainer" to="." method="_on_gui_input"]
+[connection signal="pressed" from="Buttons/MinButton" to="." method="max_min"]
+[connection signal="pressed" from="Buttons/MaxButton" to="." method="max_min"]
