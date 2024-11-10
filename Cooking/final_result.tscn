@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ojl26tamq3p6"]
+[gd_scene load_steps=5 format=3 uid="uid://ojl26tamq3p6"]
 
 [ext_resource type="Script" path="res://Cooking/final_result.gd" id="1_ln5we"]
 [ext_resource type="Texture2D" uid="uid://cfm4c07jq6jx4" path="res://Cooking/Sprites/Leaves.png" id="1_xch5e"]
+[ext_resource type="Texture2D" uid="uid://py5evxu5x35x" path="res://Player/Sprites/dot_get.png" id="3_5508f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myowx"]
 bg_color = Color(0.105882, 0.105882, 0.105882, 0.494118)
@@ -33,10 +34,26 @@ autowrap_mode = 3
 offset_left = 522.0
 offset_top = 44.0
 offset_right = 915.0
-offset_bottom = 679.0
+offset_bottom = 348.0
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_myowx")
-text = "Thank You for Playing out Game"
+text = "Thank You for Playing our Game!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="dot_box" type="Label" parent="."]
+offset_left = 525.0
+offset_top = 372.0
+offset_right = 918.0
+offset_bottom = 676.0
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_myowx")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="dot" type="Sprite2D" parent="."]
+position = Vector2(729, 526)
+scale = Vector2(12.6562, 12.6562)
+texture = ExtResource("3_5508f")

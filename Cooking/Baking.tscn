@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://x844jeddjpxf"]
+[gd_scene load_steps=5 format=3 uid="uid://x844jeddjpxf"]
 
 [ext_resource type="Script" path="res://Cooking/baking.gd" id="1_4586r"]
 [ext_resource type="Texture2D" uid="uid://bsyvtp2sgudu4" path="res://Cooking/Sprites/FanningBaking.png" id="2_ivu6x"]
 [ext_resource type="Theme" uid="uid://bv5ufn4d70a" path="res://Cooking/new_theme.tres" id="3_ydc8c"]
+[ext_resource type="AudioStream" uid="uid://cborsekrra6tc" path="res://sounds/45643__snardin42__screen-door-opening-and-closing.mp3" id="4_cyvm2"]
 
 [node name="Baking" type="Node2D"]
 script = ExtResource("1_4586r")
@@ -112,6 +113,9 @@ offset_top = 364.0
 offset_right = 216.0
 offset_bottom = 449.0
 text = "Debug: Start Button"
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cyvm2")
 
 [connection signal="timeout" from="baking_timer" to="." method="_on_baking_timer_timeout"]
 [connection signal="pressed" from="Control/HBoxContainer/Control3/stop_button" to="." method="_on_stop_button_pressed"]

@@ -5,7 +5,7 @@ extends Node2D
 @onready var baking_timer = $baking_timer
 @onready var instructions_label = $Control/HBoxContainer/Control2/instructions_label
 @onready var stop_button = $Control/HBoxContainer/Control3/stop_button
-
+@onready var sfx_player = $SFXPlayer
 
 # Constants
 const MAX_BAKING_LEVEL = 100
@@ -39,6 +39,7 @@ func increase_baking_level(amount):
 
 func _on_stop_button_pressed():
 	if not game_over:
+
 		check_baking_result()
 		end_minigame(true)
 
