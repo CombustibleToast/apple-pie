@@ -8,14 +8,24 @@ const WAIT_TIME = 0.4
 var time_since_played : float
 @onready var collected_items:Array = []
 
+# Links
+@export var storyteller: Control
+
 func _process(delta: float) -> void:
 	time_since_played -= delta
 	update_animation()
 
 func _physics_process(delta: float) -> void:
+	update_movement(delta)
+
+func update_movement(fixed_delta: float):
+	# Disallow player movement while sm is open
+	if storyteller.maximized:
+		return
+
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * fixed_delta
 
 	# Get the input direction and handle the movement/deceleration.
 	var input := Input.get_vector("left", "right", "forward", "backward").rotated(-PI/4) # the rotation is to account for the isometric 45deg viewing angle
