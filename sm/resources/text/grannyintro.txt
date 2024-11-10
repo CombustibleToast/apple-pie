@@ -1,4 +1,4 @@
-# comment
+# Played at the very start of the game
 start
 	granny
 		"Hello Dot."

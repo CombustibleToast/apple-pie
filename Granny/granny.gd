@@ -1,6 +1,7 @@
 extends Area3D
 
 @export var player_node: CharacterBody3D
+@export var storyteller: Control
 
 @onready var player_in_interact_range: bool = false
 @onready var required_item_list: Array = [
@@ -43,6 +44,7 @@ func check_ingredient_completion():
 	# 	Not implemented, so just print that items are missing
 	if len(missing_items) > 0:
 		print("Player is missing items:")
+		storyteller.ext_load_file("granny_missing_items")
 		for item in missing_items:
 			print("\t%s" % item)
 	
