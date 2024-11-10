@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6g20275wn0f2"]
+[gd_scene load_steps=5 format=3 uid="uid://b6g20275wn0f2"]
 
 [ext_resource type="Script" path="res://Title Screen/title_screen.gd" id="1_xu30a"]
 [ext_resource type="Texture2D" uid="uid://lr2ej6lybm2u" path="res://Title Screen/jekz.png" id="2_w88v3"]
 [ext_resource type="Texture2D" uid="uid://c84s5ij2cqdy6" path="res://World/ritual.png" id="2_ypey6"]
+[ext_resource type="Texture2D" uid="uid://bdd81o6n3xnrc" path="res://fishestgup1.png" id="4_f235u"]
 
 [node name="Title Screen" type="Control"]
 layout_mode = 3
@@ -34,8 +35,13 @@ grow_vertical = 2
 text = "PLAY"
 
 [node name="jecz" type="Sprite2D" parent="."]
-position = Vector2(500, 350.5)
-scale = Vector2(1.37293, 0.96547)
+position = Vector2(490, 351)
+scale = Vector2(1.41293, 1.00547)
 texture = ExtResource("2_w88v3")
+
+[node name="gup" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(953, 671)
+texture = ExtResource("4_f235u")
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

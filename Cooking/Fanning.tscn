@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Cooking/Fanning.gd" id="1_hyjgc"]
 [ext_resource type="Texture2D" uid="uid://bsyvtp2sgudu4" path="res://Cooking/Sprites/FanningBaking.png" id="2_7che7"]
-[ext_resource type="Theme" uid="uid://bv5ufn4d70a" path="res://Cooking/new_theme.tres" id="3_rhmjh"]
+[ext_resource type="Theme" uid="uid://ddho2fctvb2rx" path="res://Cooking/new_theme.tres" id="3_rhmjh"]
 
 [node name="Fanning" type="Node2D"]
 script = ExtResource("1_hyjgc")
