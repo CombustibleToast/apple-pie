@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ojl26tamq3p6"]
+[gd_scene load_steps=5 format=3 uid="uid://doh7fnx6j6cnk"]
 
 [ext_resource type="Script" path="res://Cooking/final_result.gd" id="1_ln5we"]
 [ext_resource type="Texture2D" uid="uid://cfm4c07jq6jx4" path="res://Cooking/Sprites/Leaves.png" id="1_xch5e"]
@@ -54,6 +54,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="dot" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(729, 526)
 scale = Vector2(12.6562, 12.6562)
 texture = ExtResource("3_5508f")
