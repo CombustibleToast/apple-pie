@@ -153,7 +153,7 @@ func end_file():
 	var termina = CHATBOX_BRK_RES.instantiate()
 	termina.get_child(0).text = BREAK_TEXT_STYLING + "[color=dimgray]––««––[color=white]×¤×[color=dimgray]––»»––"
 	$Bzzrt.play()
-	chatlog_add(termina)
+	await chatlog_add(termina)
 	Anima.Node(termina).anima_animation("fade in down", 0.3).play()
 	currently_talking = null
 	click_to_advance = false
