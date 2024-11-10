@@ -5,7 +5,7 @@ start
 	dot
 		"..."
 	granny 
-		"The ritual... You must complete it..."
+		"The ritual... We must complete it..."
 	dot
 		You look nervously at Granny. She's usually like this but something is off this time.
 		"What should I do?"
@@ -16,6 +16,7 @@ start
 		"A sacred gift of Demeter."
 		"And some white gold powder."
 		She cackles as she turns back to the campfire
+		"Now Go Dot!"
 	dot
 		"O- Ok Granny."
 	CLOSE@@

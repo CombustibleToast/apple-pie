@@ -1,0 +1,12 @@
+# Played when the player speaks to granny once they've collected all the items
+start
+	granny
+		"Hello my child, have you collected all the required ingredients yet?"
+	dot
+		You show granny the items you've collected
+	granny 
+		A familiar smile cracks across her face
+		"Well done Dot. We may now begin the ritual. Come join me at the campfire."
+	dot
+		"..."
+	CLOSE@@

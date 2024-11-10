@@ -51,8 +51,8 @@ func check_ingredient_completion():
 	# There are no missing items, go to the next section (cooking minigames?)
 	#	Not implemented, so just print that all items are gotten
 	else:
-		print("Player has all items!") 
-
+		print("Player has all items!")
+		storyteller.ext_load_file("granny_all_items") 
 
 func _on_area_entered(area:Area3D) -> void:
 	print("%s detected entry from %s" % [name, area.name])
