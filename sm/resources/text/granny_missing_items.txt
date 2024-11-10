@@ -1,16 +1,19 @@
 # Played when the player speaks to granny while they haven't collected all the items
 start
 	granny
-		"Hello my child, have you collected all the required ingredients yet?"
+		"Ah..." She nods to your approach.
+		"Hello, my child!" She smiles warmly. "Have you collected all the required ingredients yet?"
 	dot
-		You show granny the items you've collected
+		From within a basket, you show granny the items you've collected.
+		"I think I am missing a few..."
 	granny 
-		She furrows her brow a little
-		"You are still missing a few. Remember what you need..."
-		"Three fruits of the first sin."
-		"A sacred gift of Demeter."
-		"And some white gold powder."
-		She turns back to the campfire
+		She furrows her brow a little. "Yes, you are, dearest..."
+		"Remember what you need..."
+		"[b]Three fruits[/b] of the first sin."
+		"A sacred [b]gift of Demeter[/b]."
+		"And some [b]white-gold[/b] powder."
+		She turns back to the campfire. There is wisdom and seriousness in her eyes.
+		"Now, off you go!"
 	dot
 		"..."
 	CLOSE@@
