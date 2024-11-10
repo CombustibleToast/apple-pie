@@ -8,7 +8,7 @@ extends Node2D
 @onready var game_timer_label = $Control/HBoxContainer/Control/timer_label
 
 # Constants
-const REQUIRED_DURATION = 20  # Time in seconds to maintain circular motion
+const REQUIRED_DURATION = 2  # Time in seconds to maintain circular motion
 const MIN_RADIUS = 50  # Minimum radius for circular motion
 const MAX_RADIUS = 250  # Maximum radius for circular motion
 const MIN_SPEED = 1  # Minimum angular speed (radians per frame)
@@ -20,8 +20,9 @@ var last_position = Vector2.ZERO
 var current_angle = 0.0
 var time_in_optimal_range = 0.0
 var game_over = false
+var score: int = 0
 
-signal minigame_complete
+signal minigame_complete(score)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -83,10 +84,14 @@ func end_minigame(success):
 
 	if success:
 		instructions_label.text = "Mixing complete!"
+		print("Mixing Minigame: Success + 1")
+		score = 1
 	else:
 		instructions_label.text = "What a mess!"
+		print("Mixing Minigame: Failure + 0")
+		score = 0
 	# Emit signal to notify main script
-	emit_signal("minigame_complete")
+	emit_signal("minigame_complete", score)
 
 
 

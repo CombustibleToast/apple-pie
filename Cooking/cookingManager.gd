@@ -5,6 +5,7 @@ enum MinigameSection { FANNING, MIXING, BAKING, LOVE, NONE }
 
 # Variables
 var current_section = MinigameSection.FANNING
+var scores = { "fanning": 0, "mixing": 0, "baking": 0, "love": 0 }
 
 func _ready():
 	print("Cooking Manager ready!")
@@ -39,19 +40,22 @@ func start_section(section):
 			print("Starting Love minigame")
 
 # function to switch to the next minigame
-func on_section_complete():
-	#hide the current minigame
+func on_section_complete(score):
 	match current_section:
 		MinigameSection.FANNING:
 			$Fanning.hide()
+			scores["fanning"] = $Fanning.score
 			current_section = MinigameSection.MIXING
 		MinigameSection.MIXING:
 			$Mixing.hide()
+			scores["mixing"] = $Mixing.score
 			current_section = MinigameSection.BAKING
 		MinigameSection.BAKING:
 			$Baking.hide()
+			scores["baking"] = $Baking.score
 			current_section = MinigameSection.LOVE
 		MinigameSection.LOVE:
+			scores["love"] = $Love.score
 			$Love.hide()
 			current_section = MinigameSection.NONE
 			show_final_result()
@@ -59,6 +63,30 @@ func on_section_complete():
 	if current_section != MinigameSection.NONE:
 		start_section(current_section)
 
+
 # placeholder function for showing final result
 func show_final_result():
-	print("All minigames complete! Show final result here.")
+	# Calculate total score
+	var total_score = scores["fanning"] + scores["mixing"] + scores["baking"] + scores["love"]
+
+	print("Total score:", total_score)
+
+	# Calculate rank
+	var rank = ""
+	match total_score:
+		0:
+			rank = "F"
+		1, 2:
+			rank = "B"
+		3:
+			rank = "A"
+		4:
+			rank = "P"
+		_:
+			rank = "?"
+	
+	print("Rank:", rank)
+
+	# Show final result screen
+	$FinalResult.show()
+	$FinalResult.set_results(rank)
