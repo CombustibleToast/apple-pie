@@ -1,10 +1,10 @@
 extends Node2D
 # Node references
-@onready var flame_meter = $Control/flame_meter
-@onready var instructions_label = $Control/instructions_label
+@onready var flame_meter = $Control/HBoxContainer/Control3/flame_meter
+@onready var instructions_label = $Control/HBoxContainer/Control2/instructions_label
 @onready var intensity_timer = $intensity_timer
 @onready var game_timer = $game_timer
-@onready var timer_label = $Control/timer_label
+@onready var timer_label = $Control/HBoxContainer/Control/timer_label
 
 # Constants
 const MAX_INTENSITY = 100 
@@ -13,7 +13,7 @@ const MAX_OPTIMAL = 75  # Max intensity for the optimal range
 const REQUIRED_DURATION = 15  # Time (seconds) to maintain optimal range
 
 # Variables
-var flame_intensity: int = 0
+var flame_intensity: int = 50  # Initial flame intensity
 var in_optimal_time: int = 0  # Time spent in the optimal range
 var game_over = false
 
@@ -29,11 +29,11 @@ func start_game():
 
 # display the timer value
 func _process(_delta):
-	timer_label.text = "Timer: " + str(game_timer.time_left)
+	timer_label.text = "Timer: " + str(int(game_timer.time_left))
 
 func _input(event):
 	if event.is_action_pressed("ui_accept") and not game_over:  # "ui_accept" = mouse click
-		increase_flame_intensity(10)  # Increase by 10 units per click
+		increase_flame_intensity(5)  # Increase by 10 units per click
 
 func increase_flame_intensity(amount):
 	flame_intensity += amount
@@ -74,3 +74,7 @@ func end_minigame(success):
 	else:
 		instructions_label.text = "Finish! You did alright..."
 	emit_signal("minigame_complete")
+
+
+func _on_button_pressed():
+	start_game()

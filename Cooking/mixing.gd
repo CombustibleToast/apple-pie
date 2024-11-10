@@ -3,16 +3,16 @@ extends Node2D
 #Nodes
 @onready var bowl = $bowl
 @onready var mixing_timer = $mixing_timer
-@onready var instructions_label = $Control/instructions_label
+@onready var instructions_label = $Control/HBoxContainer/Control2/instructions_label
 @onready var game_timer = $game_timer
-@onready var game_timer_label = $Control/timer_label
+@onready var game_timer_label = $Control/HBoxContainer/Control/timer_label
 
 # Constants
-const REQUIRED_DURATION = 10  # Time in seconds to maintain circular motion
+const REQUIRED_DURATION = 20  # Time in seconds to maintain circular motion
 const MIN_RADIUS = 50  # Minimum radius for circular motion
 const MAX_RADIUS = 250  # Maximum radius for circular motion
-const MIN_SPEED = 0.5  # Minimum angular speed (radians per frame)
-const MAX_SPEED = 5.5  # Maximum angular speed (radians per frame)
+const MIN_SPEED = 1  # Minimum angular speed (radians per frame)
+const MAX_SPEED = 10  # Maximum angular speed (radians per frame)
 
 # Variables
 var mixing_center = Vector2.ZERO
@@ -29,7 +29,7 @@ func _ready():
 
 func start_game(): # Called from the main game script
 	mixing_timer.start()
-	game_timer.wait_time = 20 #Normal: 20 Debug: 5
+	game_timer.wait_time = 30 #Normal: 20 Debug: 5
 	game_timer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,7 +38,7 @@ func _process(delta):
 		return
 
 	#update gtimer label
-	game_timer_label.text = "Timer: " + str(game_timer.time_left)
+	game_timer_label.text = "Timer: " + str(int(game_timer.time_left))
 	
 	var mouse_pos = get_global_mouse_position()
 	var relative_pos = mouse_pos - mixing_center
@@ -88,3 +88,7 @@ func end_minigame(success):
 	# Emit signal to notify main script
 	emit_signal("minigame_complete")
 
+
+
+func _on_button_pressed():
+	start_game()
