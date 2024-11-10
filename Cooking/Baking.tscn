@@ -113,6 +113,8 @@ offset_right = 216.0
 offset_bottom = 449.0
 text = "Debug: Start Button"
 
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="timeout" from="baking_timer" to="." method="_on_baking_timer_timeout"]
 [connection signal="pressed" from="Control/HBoxContainer/Control3/stop_button" to="." method="_on_stop_button_pressed"]
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
