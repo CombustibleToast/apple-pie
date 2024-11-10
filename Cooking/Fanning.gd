@@ -10,17 +10,20 @@ extends Node2D
 const MAX_INTENSITY = 100 
 const MIN_OPTIMAL = 50  # Min intensity for the optimal range
 const MAX_OPTIMAL = 75  # Max intensity for the optimal range
-const REQUIRED_DURATION = 15  # Time (seconds) to maintain optimal range
+#debug value
+const REQUIRED_DURATION = 2  # Time (seconds) to maintain optimal range
 
 # Variables
 var flame_intensity: int = 50  # Initial flame intensity
 var in_optimal_time: int = 0  # Time spent in the optimal range
 var game_over = false
+var score: int = 0
 
-signal minigame_complete
+signal minigame_complete(score)
 
 func _ready():
 	flame_meter.value = flame_intensity
+	score = 0
 
 func start_game():
 	game_timer.wait_time = 20 #Normal: 20 Debug: 5
@@ -60,20 +63,27 @@ func check_optimal_range():
 		instructions_label.text = "Flame is too high! Slow down!"
 
 	if in_optimal_time >= REQUIRED_DURATION:
+		print("Win: Time in optimal range: " + str(in_optimal_time))
 		end_minigame(true) # Success if optimal range maintained 
 
 func _on_game_timer_timeout():
+	print("Fail: Time in optimal range: " + str(in_optimal_time))
 	end_minigame(false)  # Fail if time runs out
 
 func end_minigame(success):
 	game_over = true
 	intensity_timer.stop()
 	game_timer.stop()
+	
 	if success:
 		instructions_label.text = "Success! You kept the flame steady!"
+		print("Fanning Minigame: Success + 1")
+		score = 1
 	else:
 		instructions_label.text = "Finish! You did alright..."
-	emit_signal("minigame_complete")
+		print("Fanning Minigame: Fail + 0")
+		score = 0
+	emit_signal("minigame_complete", score)
 
 
 func _on_button_pressed():

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmjls1ife05bp"]
+[gd_scene load_steps=4 format=3 uid="uid://cmjls1ife05bp"]
 
 [ext_resource type="Script" path="res://Cooking/Fanning.gd" id="1_hyjgc"]
 [ext_resource type="Texture2D" uid="uid://bsyvtp2sgudu4" path="res://Cooking/Sprites/FanningBaking.png" id="2_7che7"]
+[ext_resource type="Theme" uid="uid://bv5ufn4d70a" path="res://Cooking/new_theme.tres" id="3_rhmjh"]
 
 [node name="Fanning" type="Node2D"]
 script = ExtResource("1_hyjgc")
@@ -14,7 +15,6 @@ texture = ExtResource("2_7che7")
 wait_time = 20.0
 
 [node name="intensity_timer" type="Timer" parent="."]
-wait_time = 0.72
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -31,9 +31,20 @@ anchor_left = 0.039
 anchor_right = 0.039
 offset_left = -42.805
 offset_top = 8.0
-offset_right = 961.195
+offset_right = 691.195
 offset_bottom = 191.0
 color = Color(0.140447, 0.140447, 0.140447, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.039
+anchor_right = 0.039
+offset_left = 691.195
+offset_top = -512.0
+offset_right = 957.195
+offset_bottom = 194.0
+color = Color(0.141176, 0.141176, 0.141176, 0.529412)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 1
@@ -65,6 +76,7 @@ offset_left = 454.0
 offset_top = 38.0
 offset_right = 690.0
 offset_bottom = 160.0
+text = "FAN!"
 
 [node name="Control2" type="Control" parent="Control/HBoxContainer"]
 layout_mode = 2
@@ -84,11 +96,14 @@ layout_mode = 2
 
 [node name="flame_meter" type="ProgressBar" parent="Control/HBoxContainer/Control3"]
 layout_mode = 0
-offset_left = 739.0
-offset_top = 38.0
-offset_right = 955.0
-offset_bottom = 161.0
+offset_left = 751.0
+offset_top = -482.0
+offset_right = 967.0
+offset_bottom = 158.0
+theme = ExtResource("3_rhmjh")
 value = 25.0
+fill_mode = 3
+show_percentage = false
 
 [node name="Button" type="Button" parent="."]
 visible = false

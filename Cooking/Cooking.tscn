@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmqrht7emc4aj"]
+[gd_scene load_steps=8 format=3 uid="uid://dmqrht7emc4aj"]
 
 [ext_resource type="PackedScene" uid="uid://x844jeddjpxf" path="res://Cooking/Baking.tscn" id="1_cjfy4"]
 [ext_resource type="Script" path="res://Cooking/cookingManager.gd" id="1_w1111"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cfm4c07jq6jx4" path="res://Cooking/Sprites/Leaves.png" id="2_td5p3"]
 [ext_resource type="PackedScene" uid="uid://cqboxlnsjgpf3" path="res://Cooking/Love.tscn" id="3_hqyx0"]
 [ext_resource type="PackedScene" uid="uid://ce01fdj5xj3gm" path="res://Cooking/mixing.tscn" id="4_rtdsw"]
+[ext_resource type="PackedScene" uid="uid://ojl26tamq3p6" path="res://Cooking/final_result.tscn" id="7_4rwt0"]
 
 [node name="CookingMinigameManager" type="Node2D"]
 script = ExtResource("1_w1111")
@@ -24,4 +25,7 @@ visible = false
 visible = false
 
 [node name="Mixing" parent="." instance=ExtResource("4_rtdsw")]
+visible = false
+
+[node name="FinalResult" parent="." instance=ExtResource("7_4rwt0")]
 visible = false

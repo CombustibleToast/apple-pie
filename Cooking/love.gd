@@ -12,15 +12,16 @@ const OPTIMAL_CENTER_MAX = 55  # Maximum value for optimal love range
 const OSCILLATION_SPEED = 5  # Speed at which the love level increases (adjustable for tuning)
 
 # Variables
-var love_level = 50
+var love_level = 50 # Initial love level
 var moving_up = true
 var game_over = false
+var score: int = 0
 
 signal minigame_complete
 
 func _ready():
 	love_meter.value = love_level
-	instructions_label.text = "Hit stop when you feel the love is just right."
+	instructions_label.text = "Click the love button when the meter is perfectly balanced."
 
 func start_game():
 	oscillation_timer.start()
@@ -61,9 +62,13 @@ func end_minigame(success):
 
 	if success:
 		instructions_label.text = "<3!"
+		print("Love Minigame: Success + 1")
+		score = 1
 	else:
 		instructions_label.text = "The pie is missing the perfect touch of love."
-	emit_signal("minigame_complete")
+		print("Love Minigame: Failure + 0")
+		score = 0
+	emit_signal("minigame_complete", score)	
 
-
-
+func _on_start_button_pressed():
+	start_game()
