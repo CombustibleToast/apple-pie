@@ -160,8 +160,6 @@ func end_file():
 	accepting_external_input = true
 	current_file = {}
 	$Buttons/MinButton.disabled = false
-	maximized = false
-	max_min()
 	line_num = 0
 
 ## Starts a passage from a currently loaded file (to be used for changing passages)

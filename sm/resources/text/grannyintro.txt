@@ -18,5 +18,4 @@ start
 		She cackles as she turns back to the campfire
 	dot
 		"O- Ok Granny."
-	LINK@dot
-		>END : Turn away
+	CLOSE@@
